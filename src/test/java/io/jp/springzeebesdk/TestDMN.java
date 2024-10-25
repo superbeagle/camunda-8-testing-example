@@ -4,23 +4,16 @@ import io.camunda.zeebe.client.api.response.EvaluateDecisionResponse;
 import io.camunda.zeebe.spring.client.annotation.Deployment;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import io.camunda.zeebe.client.ZeebeClient;
-
-
 import io.camunda.zeebe.spring.test.ZeebeSpringTest;
-import org.camunda.community.process_test_coverage.junit5.platform8.ProcessEngineCoverageExtension;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.HashMap;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @ZeebeSpringTest
-@Deployment(resources = "classpath:simple.dmn")
-@ExtendWith(ProcessEngineCoverageExtension.class)
+@Deployment(resources = "simple.dmn")
+
 public class TestDMN {
 
 	@Autowired private ZeebeClient zeebe;
